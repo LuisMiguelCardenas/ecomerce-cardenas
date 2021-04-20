@@ -1,6 +1,8 @@
 .navbar{
-    background-color: #ccccccb6;
-    align-content: center;
+    background: url(../../images/banner.jpg);
+    background-size: cover;
+    min-height: 100vh;
+    align-content:flex-start;
     display: flex;
     justify-content: space-between;
     height: 50px;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import './Categories.css'
 import clothing from '../../images/Categories_img/ropa.jpeg'
 import figures from '../../images/Categories_img/figuras.jpeg'
@@ -8,7 +8,9 @@ import { CartCategories } from './CartCategories/CartCategories'
 
 export const Categories = (props) => {
     
-    return ( 
+    return (
+        <Fragment>
+        <h2 className="categories__title text-center">Nuestros Productos</h2>
         <div className="categories">
             <CartCategories
                 text="Manga"
@@ -27,7 +29,7 @@ export const Categories = (props) => {
                 src={figures}
             />
         </div>
-        
+        </Fragment>
         
      );
 }

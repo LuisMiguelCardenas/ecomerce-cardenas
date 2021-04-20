@@ -6,3 +6,6 @@
     padding: 0;
     
 }
+.categories__title{
+    flex-grow: 1;
+}
