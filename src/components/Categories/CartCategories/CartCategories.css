@@ -1,0 +1,13 @@
+.cartCategories{
+    border:solid 1px rgba(0, 0, 0, 0.527);
+    display: flex;
+    flex-direction: column;
+    max-width: 15rem;
+}
+.cartCategories__img{
+
+}
+.cartCategories__text{
+    text-align: center;
+}
+

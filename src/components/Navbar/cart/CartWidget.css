@@ -1,0 +1,11 @@
+.cartWitget{
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    height: 45px;
+    justify-content: center;
+    padding-top: 15px;
+    border-radius: 100%;
+    margin-left: 5px;
+}
