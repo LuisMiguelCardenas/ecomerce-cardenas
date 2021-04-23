@@ -1,4 +1,7 @@
 import React, { Fragment } from 'react'
+import { ItemCount } from './ItemCount/ItemCount'
+import './ItemListContainer.css'
+
 
 export const ItemListContainer = () => {
 
@@ -7,7 +10,7 @@ export const ItemListContainer = () => {
         type:'manga',
         title:'Manga Naruto',
         price:'$30.000',
-        stock:4
+        stock:10
         },
         {
         type:'accesorios',
@@ -17,7 +20,7 @@ export const ItemListContainer = () => {
         },
         {
         type:'accesorios',
-        title:'Banda de regulación Naruto',
+        title:'Banda Naruto',
         price:'$40.000',
         stock:4
         },
@@ -25,7 +28,7 @@ export const ItemListContainer = () => {
         type:'ropa',
         title:'Buso zoro Roronoa',
         price:'$80.000',
-        stock:4
+        stock:5
         },
         {
         type:'Ropa',
@@ -37,7 +40,7 @@ export const ItemListContainer = () => {
         type:'manga',
         title:'Manga Dagon ball',
         price:'$30.000',
-        stock:4
+        stock:8
         },
         {
         type:'manga',
@@ -49,31 +52,33 @@ export const ItemListContainer = () => {
         type:'figura',
         title:'Figura Kakashi Naruto',
         price:'$60.000',
-        stock:4
+        stock:7
         },
         {
         type:'figura',
         title:'Figura Dragon ball Goku',
         price:'$40.000',
-        stock:4
+        stock:8
         },
         {
         type:'figura',
         title:'Figura One Pice',
         price:'$35.000',
-        stock:4
+        stock:2
         },
     ]
+
     return (
         <Fragment>
         <h2 className="itemListContainer__title text-center">Productos</h2>
         <div className= "itemListContainer">
             {products.map((item)=>{
                 return(
-                    <div className="pruductCart container">
-                        <h3>{item.title}</h3>
-                        <img src="https://img.17qq.com/images/kmmnmhdphlv.jpeg"></img>
-                        <p>{item.price}</p>
+                    <div className="itemCart container">
+                        <h3 className="itemCart__title">{item.title}</h3>
+                        <img className="item__name" src="https://img.17qq.com/images/kmmnmhdphlv.jpeg"></img>
+                        <p className="itemCart__price">{item.price}</p>
+                        <ItemCount stock={item.stock}/>
                     </div>
                 )
             }

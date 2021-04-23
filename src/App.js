@@ -1,7 +1,6 @@
 import React from 'react';
 import { Categories } from './components/Categories/Categories';
 import {Navbar} from './components/Navbar/Navbar'
-import {Saludo} from './components/saludo'
 import {ItemListContainer} from './components/ItemListContainer/ItemListContainer'
 
 function App() {
