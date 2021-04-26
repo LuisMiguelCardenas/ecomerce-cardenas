@@ -3,11 +3,19 @@
     display: flex;
     flex-direction: column;
     max-width: 15rem;
+    justify-content:flex-end;
+    align-items: center;
 }
 .cartCategories__img{
-
+    max-width: 15rem;
+    height: auto;
+    position: relative;
 }
 .cartCategories__text{
-    text-align: center;
+    background-color: #0000007a;
+    position: absolute;
+    font-weight: 800;
+    font-size: 20px;
+    color: #fff;
 }
 

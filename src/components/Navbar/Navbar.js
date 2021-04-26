@@ -34,7 +34,7 @@ export const Navbar = () => {
     return (
         <nav className = "navbar">
             <h1 
-                className="navbar-logo"><i className="navbar__logo fab fa-react"></i>Anime Shop</h1>
+                className="navbar-logo"><i class="fas fa-shopping-bag"></i>E-commerce</h1>
             <ul className = "navbarMenu">
                 {menuItems.map((item)=>{
                             return (

@@ -1,7 +1,7 @@
 .navbar{
     background: url(../../images/banner.jpg);
     background-size: cover;
-    min-height: 100vh;
+    min-height: 80vh;
     align-content:flex-start;
     display: flex;
     justify-content: space-between;
@@ -10,6 +10,7 @@
 
 }
 .navbar-logo{
+    color: #fff;
     flex-grow: 5;
     font-size: 25px;
     margin: 0px;
@@ -26,4 +27,9 @@
 .nav-links{
     color: #fff;
     text-decoration: none;
+}
+.fa-shopping-bag{
+    color: #fff;
+    font-size: 25px;
+    margin: 0px 20px 0 20px;
 }
