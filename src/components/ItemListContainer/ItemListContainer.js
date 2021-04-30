@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react'
-import { ItemCount } from './ItemCount/ItemCount'
 import { ItemList } from './ItemList/ItemList'
 import './ItemListContainer.css'
 

@@ -18,7 +18,7 @@ export const ItemList = () => {
     
     return ( 
         <div className = "container fluid">
-        <Item product={product}/>
+            <Item product={product}/>
         </div>
      );
 }
