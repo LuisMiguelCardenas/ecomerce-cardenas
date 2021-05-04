@@ -1,5 +1,5 @@
-.itemListContainer{
-    background-color: #ccc;
+.itemlistContainer{
+    background-color: #f5f4f4;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;

@@ -1,4 +1,4 @@
-.categories{
+.category{
     display:flex;
     flex-direction: row;
     justify-content: space-around;
@@ -6,6 +6,7 @@
     padding: 0;
     
 }
-.categories__title{
-    flex-grow: 1;
+.category__title{
+    font-size: 45px;
+    margin-top: 50px;
 }

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { ItemList } from './ItemList/ItemList'
 import './ItemListContainer.css'
 
@@ -6,9 +6,10 @@ import './ItemListContainer.css'
 export const ItemListContainer = () => {
 
     return (
-        <Fragment>
+        <div className="itemlistContainer container justify-content-center">
+            <h2 className="itemlistContainer__title text-center" >Encuentra lo que tanto estas buscando</h2>
             <ItemList/>
-        </Fragment>
+        </div>
         
         
      );

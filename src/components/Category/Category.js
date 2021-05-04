@@ -1,29 +1,34 @@
 import React, { Fragment } from 'react'
-import './Categories.css'
+import './Category.css'
 import menclothing from '../../images/Categories_img/menclothing.jpeg'
 import womenclothing from '../../images/Categories_img/womenclothing.jpeg'
 import jewerly from '../../images/Categories_img/jewerly.jpeg'
 import electronic from '../../images/Categories_img/electronic.jpeg'
-import { CartCategories } from './CartCategories/CartCategories'
+import { CartCategory } from './CartCategory/CartCategory'
+import {CategoryId} from './CategoryId/CategoryId'
 
-export const Categories = () => {
+export const Category = () => {
+
+
+
+
     return (
         <Fragment>
-        <h2 className="categories__title text-center">Nuestros Productos</h2>
-        <div className="categories">
-            <CartCategories
+        <h2 className="category__title text-center">Nuestros Productos</h2>
+        <div className="category justify-content-center">
+            <CartCategory
                 text='Ropa de hombre'
                 src={menclothing}
             />
-            <CartCategories
+            <CartCategory
                 text="Joyería"
                 src={jewerly}
             />
-            <CartCategories
+            <CartCategory
                 text="Electronica"
                 src={electronic}
             />
-            <CartCategories
+            <CartCategory
                 text="Ropa de mujer"
                 src={womenclothing}
             />

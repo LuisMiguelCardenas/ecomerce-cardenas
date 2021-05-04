@@ -1,34 +1,39 @@
 .navbar{
-    background-color: #1f1f1f;
-    background-size: cover;
-    align-content:flex-start;
-    display: flex;
-    justify-content: space-between;
-    height: 55px;
-    padding: 0.5rem;
-
+    background-color: #ebebeb;
+    box-shadow: 0px 7px 10px -6px #252525 ;
 }
-.navbar-logo{
-    color: #fff;
-    flex-grow: 5;
-    font-size: 25px;
-    margin: 0px;
+.navbarNav{
+    border-bottom: #222020  1px solid;
+}
+.navbar__logo{
+    color:#222020;
+    text-decoration: none;
+}
+.navbar__logo--name{
+     font-size: 25px;
 }
 .navbarMenu{
-    align-content: center;
-    display: flex;
-    flex-direction: row;
-    flex-grow: 5;
-    justify-content: space-between;
     list-style: none;
     margin: 0px;
+    padding: 0.5rem;
 }
 .nav-links{
-    color: #fff;
+    color: #222020 ;
     text-decoration: none;
 }
 .fa-shopping-bag{
     color: #fff;
     font-size: 25px;
-    margin: 0px 20px 0 20px;
 }
+.category-hide{
+    display: none;
+  }
+  
+.navCategories:hover > .category-hide{
+  display: block;
+}
+.nav-links__category{
+    text-decoration: none;
+    list-style: none;
+}
+
