@@ -22,7 +22,7 @@ function App() {
           <Route path='/category'>         
             <Category/>
           </Route>
-          <Route path='/category:categoryId'>         
+          <Route path='/categoryid/:category'>         
             <CategoryId/>
           </Route>
           <Route path='/item/:id'>         

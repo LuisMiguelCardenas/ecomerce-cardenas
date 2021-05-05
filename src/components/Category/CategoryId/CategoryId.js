@@ -1,27 +1,44 @@
 import React, { useState,useEffect } from 'react'
+import { useParams } from 'react-router';
+import {Link} from 'react-router-dom'
 
 export const CategoryId = () => {
 
-    const [product, setProduct] = useState ([])
+    useParams()
+    const {category} = useParams()
 
+    const [categories, setCategories] = useState([])
+    
+    
     useEffect(() => {
-        getData()
-    }, [])
+        const getProduct = async () =>{
+            const getData = await fetch('https://fakestoreapi.com/products/')
+            const data = await getData.json()
+            setCategories(data)
+        }
+        getProduct()
+    }, [category])
 
-    const getData = async () => {
-        const data = await fetch ('https://fakestoreapi.com/products')
-        const dataProducts = await data.json()
-        setProduct(dataProducts)
-    }
-    
-    const category = () => {
-        let array2 = product.filter(item => item.category == 'electronics');
-        console.log(array2)
-    }
-    category()
-    
     return ( 
-        <h3>Soy una categoria </h3>
+        <h3>{category} {
+            categories.filter(categories => categories.category === category).map(
+                item => {
+                    return(
+                    <div key={item.id} className="item__container">
+                        <h4 className="item__container--title">{item.title}</h4>
+                        <Link to = {`/item/${item.id}`}>
+                        <img className="item__container--img" src = {item.image} />
+                        </Link>
+                        
+                       
+                        <p className="item__container--text">{item.price}</p>
+                        
+                    </div>
+                    )
+                }
+                   
+                )
+        }</h3>
      );
 }
  
