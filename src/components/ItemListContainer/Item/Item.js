@@ -18,9 +18,6 @@ const Item = (props) => {
                                 <img className="item__container--img" src = {product.image} />
                               </Link>
                               <p className="item__container--text">{product.price}</p>
-                              <ItemCount 
-                                stock = {product.id*2}
-                              />
                               <p>{product.category}</p>
                           </div>
                       )

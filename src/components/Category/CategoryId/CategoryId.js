@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState,useEffect, Fragment } from 'react'
 import { useParams } from 'react-router';
 import {Link} from 'react-router-dom'
 
@@ -20,25 +20,31 @@ export const CategoryId = () => {
     }, [category])
 
     return ( 
-        <h3>{category} {
-            categories.filter(categories => categories.category === category).map(
-                item => {
-                    return(
-                    <div key={item.id} className="item__container">
-                        <h4 className="item__container--title">{item.title}</h4>
-                        <Link to = {`/item/${item.id}`}>
-                        <img className="item__container--img" src = {item.image} />
-                        </Link>
+        
+        <div className="categoryId container mt-5">
+        <h3 className="categoryId__title text-center">{category}</h3>
+            <div className="categoryId__container row mt-4 justify-content-center">
+            {
+                categories.filter(categories => categories.category === category).map(
+                    item => {
+                        return(
+                        <div key={item.id} className="item__container col-md-3">
+                            <h4 className="item__container--title">{item.title}</h4>
+                            <Link to = {`/item/${item.id}`}>
+                            <img className="item__container--img" src = {item.image} />
+                            </Link>
+
                         
-                       
-                        <p className="item__container--text">{item.price}</p>
-                        
-                    </div>
+                            <p className="item__container--text">{item.price}</p>
+
+                        </div>
+                        )
+                    }
+
                     )
-                }
-                   
-                )
-        }</h3>
+            }
+            </div>
+        </div>
      );
 }
  

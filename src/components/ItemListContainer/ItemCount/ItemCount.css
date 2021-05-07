@@ -1,5 +1,5 @@
 .itemCount{
-    background-color: #1b1b1b;
+    background-color: #f1f1f1;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -10,13 +10,12 @@
 }
 .itemCount__decrease,
 .itemCount__increase{
-    color: #ffff;
-    border: solid 1px #ffff;
+    color: #252525;
     font-weight: 900;
 }
 .itemCount__text{
     font-weight: 900;
     text-align: center;
     margin: 0;
-    color: #ffff;
+    color: #252525;
 }

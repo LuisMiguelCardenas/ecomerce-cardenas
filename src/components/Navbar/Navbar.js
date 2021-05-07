@@ -37,8 +37,7 @@ export const Navbar = () => {
                 <CartWidget/>
             </div>
             <ul className = "navbarMenu col-8 row justify-content-around px-5">
-                <Link className="nav-links col-md-3" to='/category#' >
-                    <li className="nav-links navCategories">Categories
+                    <li className="nav-links navCategories col-3">Categories
                         <ul className="nav__category category-hide">{
                             result.map((item, index) => (
                                 <li key ={index} className="nav__category--link">
@@ -48,7 +47,6 @@ export const Navbar = () => {
                         }
                         </ul>
                     </li>       
-                </Link>
                <li className="nav-links col-md-3">New</li>
                <li className="nav-links col-md-3">Best Seller</li>
                <li className="nav-links col-md-3">Contac Us</li>

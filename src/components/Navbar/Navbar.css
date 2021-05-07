@@ -27,10 +27,12 @@
 }
 .category-hide{
     display: none;
+    background-color: #fff;
   }
   
 .navCategories:hover > .category-hide{
   display: block;
+  position: fixed;
 }
 .nav-links__category{
     text-decoration: none;
