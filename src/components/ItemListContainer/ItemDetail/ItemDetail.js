@@ -1,20 +1,22 @@
-import React, {useState} from 'react'
+import React, { useContext} from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '../../Button/Button'
 import { ItemCount } from '../ItemCount/ItemCount'
 import './ItemDetail.css'
-
+import { CartContext } from '../../context/CartContext'
 
 
 export const ItemDetail = ({product}) => {
 
-    const [button, setButton] = useState(false)
    
-    const handleClick = () => {
-        console.log(button)
-        setButton(true)    
-    }
-    console.log(button)
+
+    const {cart, addToCart,cartQuantity,button} = useContext(CartContext)
+    
+    console.log(cart)
+    console.log(cartQuantity)
+
+   
+
     return ( 
         <div className= "itemDetail row justify-content-center">
             <img className="itemDetail__image col-md-4" src={product.image}/>
@@ -25,7 +27,9 @@ export const ItemDetail = ({product}) => {
                 <p className="itemDetail__text">{product.description}</p>
                 <ItemCount 
                     stock = {product.id*2}
-                    onAdd = {handleClick}
+                    //onAdd = {handleClick}
+                    product={product}
+                    onAdd={addToCart}
                 />
                 {
                   button? <Link to = '/cart'><Button/></Link>: null
@@ -36,4 +40,3 @@ export const ItemDetail = ({product}) => {
      );
 }
  
-

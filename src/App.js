@@ -6,6 +6,7 @@ import {ItemDetailContainer} from './components/ItemListContainer/ItemDetailCont
 import {Banner} from './components/Banner/Banner'
 import { CategoryId } from './components/Category/CategoryId/CategoryId';
 import {Cart} from './components/Cart/Cart';
+import {CartProvider} from './components/context/CartContext'
 
 function App() {
   
@@ -13,6 +14,8 @@ function App() {
   return (
     <div className = "container-fluid justify-content-center m-0 p-0">
       <BrowserRouter>
+        
+      <CartProvider>
         <Navbar/>
         <Switch>
           <Route exact path='/'>
@@ -29,6 +32,7 @@ function App() {
             <Cart/>
           </Route>
         </Switch>
+        </CartProvider>
       </BrowserRouter> 
     </div>
   );

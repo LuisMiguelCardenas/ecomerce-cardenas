@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import './ItemCount.css'
 
-export const ItemCount = ({stock, onAdd}) => {
+export const ItemCount = ({stock, onAdd, product}) => {
     
     
     const [number, setNumber] = useState(1);
@@ -17,7 +17,6 @@ export const ItemCount = ({stock, onAdd}) => {
             setNumber(number +-1)
         }
     }
-
     return ( 
         <Fragment>
             <span className="itemCount">
@@ -26,7 +25,7 @@ export const ItemCount = ({stock, onAdd}) => {
                 <button className="itemCount__increase btn" onClick={increase}>+</button>
             </span>
             <p>Cantidad disponible {(stock)-(number)}</p>
-            <button className="btn btn-secondary" onClick={onAdd}>Añadir al carrito <span>{number}</span></button>
+            <button className="btn btn-secondary" onClick={() => onAdd(product,number)}>Añadir al carrito <span>{number}</span></button>
             </Fragment>
      );
 }

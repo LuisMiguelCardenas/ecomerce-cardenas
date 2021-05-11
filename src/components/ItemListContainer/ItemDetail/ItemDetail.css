@@ -6,6 +6,7 @@
 }
 .itemDetail__image{
     max-width: 20rem;
+    max-height: 17rem;
 }
 .imtemDetail__detail{
     margin-left: 2rem;
