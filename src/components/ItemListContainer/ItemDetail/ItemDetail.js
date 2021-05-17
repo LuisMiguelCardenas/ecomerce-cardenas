@@ -13,8 +13,6 @@ export const ItemDetail = ({product}) => {
     const {cart, addToCart,cartQuantity,button} = useContext(CartContext)
     
     console.log(cart)
-    console.log(cartQuantity)
-
    
 
     return ( 

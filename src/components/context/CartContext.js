@@ -2,11 +2,6 @@ import React, { createContext, useEffect, useState } from "react"
 
 export const CartContext = createContext();
 
-const data = {
-    nombre:'Miguel',
-    edad:34
-}
-
 
 export const CartProvider = ({children}) => {
 
@@ -18,13 +13,23 @@ export const CartProvider = ({children}) => {
     
     const handleClick = () => {
         setButton(true)
-
     }
 
-
     const addToCart = (item,quantity) =>{
-        setCart([...cart,{'name':item, 'quantity':quantity}])
+        if ((cart.map(x => x.id)).includes(item.id)){
+            const newCart = [...cart];
+
+            newCart.forEach((p) => {
+                if (p.id === item.id){
+                    console.log(p);
+                    p.quantity = p.quantity + quantity;
+                }
+            })
+            console.log('repetido')
+        }else setCart([...cart,{'id':item.id, 'name':item, 'quantity':quantity}])
+        
         handleClick()
+        cartTotal()
     }
 
     useEffect(() => {
@@ -36,13 +41,23 @@ export const CartProvider = ({children}) => {
         setCart([])
     }
 
-    const delBurger = (id) => {
-        const items = cart.filter((item) => item.id !== id);
-        setCart(items);
+    const removeItem = (id) => {
+        const newCart=cart.filter(x => x.id !== id)
+        const second = cart.map(x => x.id)
+        console.log(second)
+        console.log(newCart)
+        setCart(newCart)
     };
     
+    const cartTotal = () =>{
+        if(cart.length !== 0){
+            const total = cart.map(item => item.name.price).reduce((a,b) => a+b)
+            return(total)
+        } return (0)   
+    } 
+
     return ( 
-        <CartContext.Provider value={{cart,addToCart,cartQuantity,button,clearCart,delBurger}}>
+        <CartContext.Provider value={{cart,addToCart,cartQuantity,button,clearCart,removeItem,cartTotal}}>
             {children}
         </CartContext.Provider>
      );
