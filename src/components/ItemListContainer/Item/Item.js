@@ -1,5 +1,4 @@
 import React from 'react'
-import { ItemCount } from '../ItemCount/ItemCount';
 import {Link} from 'react-router-dom'
 import './Item.css'
 
@@ -18,7 +17,7 @@ const Item = (props) => {
                                 <img className="item__container--img" src = {product.image} />
                               </Link>
                               <p className="item__container--text">{product.price}</p>
-                              <p>{product.category}</p>
+                              <p>{product.categoryId}</p>
                           </div>
                       )
                   })}

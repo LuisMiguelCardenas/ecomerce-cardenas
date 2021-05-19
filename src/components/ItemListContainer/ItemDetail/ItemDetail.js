@@ -6,7 +6,7 @@ import './ItemDetail.css'
 import { CartContext } from '../../context/CartContext'
 
 
-export const ItemDetail = ({product}) => {
+export const ItemDetail = ({item}) => {
 
    
 
@@ -17,16 +17,16 @@ export const ItemDetail = ({product}) => {
 
     return ( 
         <div className= "itemDetail row justify-content-center">
-            <img className="itemDetail__image col-md-4" src={product.image}/>
+            <img className="itemDetail__image col-md-4" src={item.image}/>
             <div className="imtemDetail__detail col-md-6">
-                <h3 className="itemDetail__title">{product.title}</h3>
-                <p className="itemDetail__price">$ {product.price}</p>    
+                <h3 className="itemDetail__title">{item.title}</h3>
+                <p className="itemDetail__price">$ {item.price}</p>    
                 <h5><strong>Descripción del producto</strong></h5>
-                <p className="itemDetail__text">{product.description}</p>
+                <p className="itemDetail__text">{item.description}</p>
                 <ItemCount 
-                    stock = {product.id*2}
+                    stock = {item.stock}
                     //onAdd = {handleClick}
-                    product={product}
+                    product={item}
                     onAdd={addToCart}
                 />
                 {
