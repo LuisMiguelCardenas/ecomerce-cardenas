@@ -5,20 +5,10 @@ import {getFirestore} from '../../../firebase/index'
 
 export const ItemList = () => {
     
-    const [product, setProduct] = useState ([])
+   
     const [items, setItems] = useState ([])
 
 
-    // useEffect(() => {
-    //     getData()
-    // }, [])
-
-    // const getData = async () => {
-    //     const data = await fetch ('https://fakestoreapi.com/products')
-    //     const dataProducts = await data.json()
-    //     setProduct(dataProducts)
-        
-    // }
 
     useEffect (
         () => {
@@ -30,13 +20,13 @@ export const ItemList = () => {
                     if(querySnapshot.size === 0){
                         console.log('no hay productos')
                     }
-                    setItems(querySnapshot.docs.map((doc) => doc.data()))
-                    
+                    setItems(querySnapshot.docs.map(doc => ({...doc.data(), id : doc.id })))
+                    console.log(querySnapshot.docs.map(doc => doc.id))
+    
                 })
                 .catch((error)  => console.error(error))
         }, []
     )
-    
     
     return ( 
         <div className = "container fluid">

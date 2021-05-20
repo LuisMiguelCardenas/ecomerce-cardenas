@@ -3,29 +3,42 @@ import { Link } from 'react-router-dom';
 import { CartWidget } from './cart/CartWidget';
 import './Navbar.css'
 import { SearchBar } from './SearchBar/SearchBar';
+import {getFirestore} from '../../firebase/index'
 
 export const Navbar = () => {
     
     const [product, setProduct] = useState ([])
 
-    useEffect(() => {
-        getData()
+    useEffect(
+        () => {
+            const db = getFirestore()
+            const itemCollection = db.collection('items')
+                
+            itemCollection.get().then(
+                (querySnapshot) => {
+                    if(querySnapshot.size === 0){
+                        console.log('no hay productos')
+                    }
+                    setProduct(querySnapshot.docs.map(doc => ({...doc.data(), id : doc.id })))
+                
+                })
+                .catch((error)  => console.error(error))
+
     }, [])
 
-    const getData = async () => {
-        const data = await fetch ('https://fakestoreapi.com/products')
-        const dataProducts = await data.json()
-        setProduct(dataProducts)    
-    }
+    
 
-    let result = (product.map(item => item.category)).reduce((acc, e) =>{
+    let result = (product.map(item => item.categoryId)).reduce((acc, e) =>{
         if(!acc.find(d => d == e)) {
           acc.push(e)
         }
       return(acc)
       }, [])
 
-
+      const capitalize = (word) => {
+        return word[0].toUpperCase() + word.slice(1);
+    }
+   
     return (
         <nav className = "navbar container-fluid row p-0 m-0 justify-content-center">
             <div className='navbarNav col-12 row m-0'>
@@ -41,7 +54,7 @@ export const Navbar = () => {
                         <ul className="nav__category category-hide">{
                             result.map((item, index) => (
                                 <li key ={index} className="nav__category--link">
-                                <Link to = {`/categoryid/${item}`} >{item}</Link>
+                                <Link to = {`/categoryid/${item}`}>{capitalize(item)}</Link>
                                 </li>
                                 ))                            
                         }

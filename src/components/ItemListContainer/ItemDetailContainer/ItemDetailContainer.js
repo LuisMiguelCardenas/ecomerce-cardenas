@@ -7,18 +7,13 @@ import Item from '../Item/Item';
 
 export const ItemDetailContainer = () => {
 
-    const {id} = useParams()
-    console.log(id)
-    
-    
-    console.log(id)
-    
+    const {id} = useParams()    
     const [item, setItem] = useState([])
 
 
     useEffect(() =>{ 
         const db = getFirestore()
-        const docRef = db.collection("items").doc("1nVDO8wVMuwLa0ySRA7b");
+        const docRef = db.collection("items").doc(id);
 
         docRef.get().then((doc) => {
             if (doc.exists) {
@@ -31,7 +26,7 @@ export const ItemDetailContainer = () => {
         }).catch((error) => {
             console.log("Error getting document:", error);
         });
-    }, [])
+    }, [id])
 
     console.log(item)
     

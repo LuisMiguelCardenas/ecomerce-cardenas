@@ -1,6 +1,7 @@
 import React,  {Fragment, useContext} from 'react'
 import { CartContext } from '../context/CartContext'
 import { Link } from 'react-router-dom';
+import { FormCart } from './FormCart/FormCart';
 
 export const Cart = () => {
 
@@ -9,7 +10,7 @@ export const Cart = () => {
 
     return ( 
         
-        cartQuantity > 0? <Fragment>
+        cartQuantity > 0? <div className="container">
         {
             cart.map(item =>
                 <div key={item.id} className="productInCart m-5">
@@ -22,7 +23,9 @@ export const Cart = () => {
         }
         <button onClick={clearCart}>Limpiar Carrito</button>
         <p>Total $ {cartTotal()}</p>
-    </Fragment> : <p>El carrito está vacío, <Link to = '/'>regresa</Link> a nuestra pagina para conseguir lo que necesitas </p>
+        <FormCart/>
+
+    </div> : <p>El carrito está vacío, <Link to = '/'>regresa</Link> a nuestra pagina para conseguir lo que necesitas </p>
         
         
     

@@ -25,7 +25,6 @@ export const CartProvider = ({children}) => {
                     p.quantity = p.quantity + quantity;
                 }
             })
-            console.log('repetido')
         }else setCart([...cart,{'id':item.id, 'name':item, 'quantity':quantity}])
         
         handleClick()

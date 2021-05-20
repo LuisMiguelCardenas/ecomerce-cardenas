@@ -1,31 +1,47 @@
 import React, { useState,useEffect, Fragment } from 'react'
 import { useParams } from 'react-router';
 import {Link} from 'react-router-dom'
+import {getFirestore} from '../../../firebase/index'
+
 
 export const CategoryId = () => {
 
-    useParams()
+
     const {category} = useParams()
 
     const [categories, setCategories] = useState([])
     
-    
-    useEffect(() => {
-        const getProduct = async () =>{
-            const getData = await fetch('https://fakestoreapi.com/products/')
-            const data = await getData.json()
-            setCategories(data)
-        }
-        getProduct()
-    }, [category])
+
+    useEffect(
+        () => {
+            const db = getFirestore()
+            const itemCollection = db.collection('items')
+                
+            itemCollection.get().then(
+                (querySnapshot) => {
+                    if(querySnapshot.size === 0){
+                        console.log('no hay productos')
+                    }
+                    setCategories(querySnapshot.docs.map(doc => ({...doc.data(), id : doc.id })))
+                
+                })
+                .catch((error)  => console.error(error))
+
+    }, [])
+
+
+    const capitalize = (word) => {
+        return word[0].toUpperCase() + word.slice(1);
+    }
+   
 
     return ( 
         
         <div className="categoryId container mt-5">
-        <h3 className="categoryId__title text-center">{category}</h3>
+        <h3 className="categoryId__title text-center">{capitalize(category)}</h3>
             <div className="categoryId__container row mt-4 justify-content-center">
             {
-                categories.filter(categories => categories.category === category).map(
+                categories.filter(categories => categories.categoryId === category).map(
                     item => {
                         return(
                         <div key={item.id} className="item__container col-md-3">
@@ -33,14 +49,10 @@ export const CategoryId = () => {
                             <Link to = {`/item/${item.id}`}>
                             <img className="item__container--img" src = {item.image} />
                             </Link>
-
-                        
-                            <p className="item__container--text">{item.price}</p>
-
+                            <p className="item__container--text">$ {item.price}</p>
                         </div>
                         )
                     }
-
                     )
             }
             </div>
