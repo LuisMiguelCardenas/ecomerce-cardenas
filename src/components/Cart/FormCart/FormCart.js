@@ -1,8 +1,18 @@
 import React, { useState } from 'react'
 
+import {db} from '../../../firebase/index'
 
-export const FormCart = () => {
 
+export const FormCart = ({cart}) => {
+
+    const agregar = (cart) => {
+        db.collection('pedidos').add({
+            cart
+        })
+    
+    }
+    
+    
     const [user,setUser] = useState({
         name:'',
         number:'',
@@ -18,9 +28,12 @@ export const FormCart = () => {
 
     const sendData = (e) => {
         e.preventDefault()
+        const pedido = [{cart,user}]//console.log(user)
+        //console.log(cart)
+        console.log(pedido)
+        agregar(pedido)
     }
 
-    console.log(user)
     return ( 
     <form onSubmit={sendData}>
         <div id="form__name" className="form-group">

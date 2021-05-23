@@ -21,8 +21,7 @@ export const ItemList = () => {
                         console.log('no hay productos')
                     }
                     setItems(querySnapshot.docs.map(doc => ({...doc.data(), id : doc.id })))
-                    console.log(querySnapshot.docs.map(doc => doc.id))
-    
+
                 })
                 .catch((error)  => console.error(error))
         }, []

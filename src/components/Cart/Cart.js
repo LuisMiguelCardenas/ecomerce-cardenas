@@ -23,7 +23,9 @@ export const Cart = () => {
         }
         <button onClick={clearCart}>Limpiar Carrito</button>
         <p>Total $ {cartTotal()}</p>
-        <FormCart/>
+        <FormCart
+            cart = {cart}
+        />
 
     </div> : <p>El carrito está vacío, <Link to = '/'>regresa</Link> a nuestra pagina para conseguir lo que necesitas </p>
         
