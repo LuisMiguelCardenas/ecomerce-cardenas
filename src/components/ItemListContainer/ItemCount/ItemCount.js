@@ -26,7 +26,7 @@ export const ItemCount = ({stock, onAdd, product}) => {
             </span>
             <p>Cantidad disponible {(stock)-(number)}</p>
             <button className="btn btn-secondary" onClick={() => onAdd(product,number)}>Añadir al carrito <span>{number}</span></button>
-            </Fragment>
+        </Fragment>
      );
 }
  

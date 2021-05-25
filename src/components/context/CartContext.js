@@ -25,7 +25,7 @@ export const CartProvider = ({children}) => {
                     p.quantity = p.quantity + quantity;
                 }
             })
-        }else setCart([...cart,{'id':item.id, 'name':item, 'quantity':quantity}])
+        }else setCart([...cart,{'id':item.id, 'name':item.title ,'price':item.price, 'quantity':quantity}])
         
         handleClick()
         cartTotal()
@@ -48,12 +48,13 @@ export const CartProvider = ({children}) => {
         setCart(newCart)
     };
     
-    const cartTotal = () =>{
+    const cartTotal = () => {
         if(cart.length !== 0){
-            const total = cart.map(item => item.name.price).reduce((a,b) => a+b)
+            const total = cart.map(item => item.price).reduce((a,b) => a+b)
             return(total)
         } return (0)   
     } 
+    
 
     return ( 
         <CartContext.Provider value={{cart,addToCart,cartQuantity,button,clearCart,removeItem,cartTotal}}>

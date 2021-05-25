@@ -18,7 +18,8 @@ export const ItemDetailContainer = () => {
         docRef.get().then((doc) => {
             if (doc.exists) {
                 console.log("Document data:", doc.data());
-                setItem(doc.data())
+                setItem({...doc.data(),id: doc.id})
+                console.log(doc.id)
             } else {
                 // doc.data() will be undefined in this case
                 console.log("No such document!");

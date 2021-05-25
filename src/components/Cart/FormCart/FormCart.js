@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import {db} from '../../../firebase/index'
 
 
-export const FormCart = ({cart}) => {
+export const FormCart = ({cart,total}) => {
 
     const agregar = (cart) => {
         db.collection('pedidos').add({
@@ -12,6 +12,9 @@ export const FormCart = ({cart}) => {
     
     }
     
+    // const date = db.Timestamp.fromDate(new Date())
+
+    // console.log(date)
     
     const [user,setUser] = useState({
         name:'',
@@ -28,7 +31,12 @@ export const FormCart = ({cart}) => {
 
     const sendData = (e) => {
         e.preventDefault()
-        const pedido = [{cart,user}]//console.log(user)
+        const pedido = [{
+            date: new Date(),
+            buyer: user,
+            items: cart,
+            total: total 
+        }]//console.log(user)
         //console.log(cart)
         console.log(pedido)
         agregar(pedido)
