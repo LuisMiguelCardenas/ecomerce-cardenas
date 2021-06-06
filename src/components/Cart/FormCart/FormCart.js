@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-
 import {db} from '../../../firebase/index'
-
+import {Input} from './Input'
 
 export const FormCart = ({cart,total}) => {
 
@@ -36,49 +35,37 @@ export const FormCart = ({cart,total}) => {
             buyer: user,
             items: cart,
             total: total 
-        }]//console.log(user)
-        //console.log(cart)
+        }]
         console.log(pedido)
         agregar(pedido)
     }
 
     return ( 
-    <form onSubmit={sendData}>
-        <div id="form__name" className="form-group">
-          <label >Name</label>
-          <input 
-            type="text" 
-            className="form-control" 
-            id="formGroupExampleInput" 
-            placeholder="Example input"
-            name="name"
-            onChange={handleInputChange}
-            />
+    <form className="form my-5" onSubmit={sendData}>
+        <Input
+            label='Name'
+            type='text'
+            placeholder='Enter your name'
+            name ='name'
+            onAdd={handleInputChange}
+        />
+        <Input
+            label='Phone'
+            type='number'
+            placeholder='Enter your phone'
+            name ='number'
+            onAdd={handleInputChange}
+        />
+        <Input
+            label='Email'
+            type='email'
+            placeholder='Enter your email'
+            name ='email'
+            onAdd={handleInputChange}
+        />
+        <div className="justify-content-center row">
+            <button className="btn btn-secondary col-6" type ="submit">PROCEED TO CHECKOUT</button>
         </div>
-        <div id="form__phone" className="form-group">
-          <label>Phone</label>
-          <input 
-            type="number" 
-            className="form-control" 
-            id="formGroupExampleInput" 
-            placeholder="Example input"
-            name="number"
-            onChange={handleInputChange}
-            />
-        </div>
-        <div id="form__email" className="form-group">
-          <label >Email</label>
-          <input 
-            type="email" 
-            className="form-control" 
-            id="formGroupExampleInput" khkj
-            placeholder="Example input"
-            name="email"
-            onChange={handleInputChange}
-            />
-        </div>
-        <button className="btn btn-primary" type ="submit">Enviar</button>
-        <p>{JSON.stringify(user) }</p>
     </form> );
 }
  

@@ -5,7 +5,7 @@ import './Banner.css'
 export const Banner = () => {
     return ( 
         <div className="banner">
-            <img src={banner}/>
+            <img src={banner} alt=''/>
         </div>
      );
 }

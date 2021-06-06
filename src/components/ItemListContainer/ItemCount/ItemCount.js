@@ -17,6 +17,7 @@ export const ItemCount = ({stock, onAdd, product}) => {
             setNumber(number +-1)
         }
     }
+
     return ( 
         <Fragment>
             <span className="itemCount">
@@ -25,7 +26,7 @@ export const ItemCount = ({stock, onAdd, product}) => {
                 <button className="itemCount__increase btn" onClick={increase}>+</button>
             </span>
             <p>Cantidad disponible {(stock)-(number)}</p>
-            <button className="btn btn-secondary" onClick={() => onAdd(product,number)}>Añadir al carrito <span>{number}</span></button>
+            <button className="btnAddCart btn btn-secondary" onClick={() => onAdd(product,number)}>ADD TO CART <span>{number}</span></button>
         </Fragment>
      );
 }

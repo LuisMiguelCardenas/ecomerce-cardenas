@@ -6,7 +6,7 @@ export const Button = () => {
    
     return ( 
         
-        <button className="btn btn-success mx-3">Finalizar compra</button>
+        <button className="btn btn-success m-0 col-12">GO TO CHECKOUT</button>
        
      );
 }

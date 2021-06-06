@@ -7,6 +7,7 @@ import {Banner} from './components/Banner/Banner'
 import { CategoryId } from './components/Category/CategoryId/CategoryId';
 import {Cart} from './components/Cart/Cart';
 import {CartProvider} from './components/context/CartContext'
+import { Footer } from './components/Footer/Footer';
 
 function App() {
   
@@ -14,7 +15,6 @@ function App() {
   return (
     <div className = "container-fluid justify-content-center m-0 p-0">
       <BrowserRouter>
-        
       <CartProvider>
         <Navbar/>
         <Switch>
@@ -32,6 +32,7 @@ function App() {
             <Cart/>
           </Route>
         </Switch>
+        <Footer/>
         </CartProvider>
       </BrowserRouter> 
     </div>

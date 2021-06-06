@@ -10,8 +10,8 @@ export const CartWidget = () => {
 
     return (  
         
-        <Link to = '/cart' className="cartWitget__container">
-            <span style={{color: cartQuantity > 0 ? '#000' : '#6666'}} className="cartWitget col-md-1">
+        <Link to = '/cart' className="cartWitget__container col-md-1">
+            <span style={{color: cartQuantity > 0 ? '#000' : '#6666'}} className="cartWitget">
                 <i className="cart__logo fab fa-opencart"></i>
                 <p className="CartQuantity">{cartQuantity}</p>
             </span>

@@ -21,11 +21,10 @@ export const CartProvider = ({children}) => {
 
             newCart.forEach((p) => {
                 if (p.id === item.id){
-                    console.log(p);
                     p.quantity = p.quantity + quantity;
                 }
             })
-        }else setCart([...cart,{'id':item.id, 'name':item.title ,'price':item.price, 'quantity':quantity}])
+        }else setCart([...cart,{'id':item.id, 'name':item.title ,'price':item.price,'image':item.image, 'quantity':quantity}])
         
         handleClick()
         cartTotal()

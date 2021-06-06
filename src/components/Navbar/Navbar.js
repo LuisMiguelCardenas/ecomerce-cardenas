@@ -8,6 +8,7 @@ import {getFirestore} from '../../firebase/index'
 export const Navbar = () => {
     
     const [product, setProduct] = useState ([])
+    const [menu, setMenu] = useState ('')
 
     useEffect(
         () => {
@@ -29,7 +30,7 @@ export const Navbar = () => {
     
 
     let result = (product.map(item => item.categoryId)).reduce((acc, e) =>{
-        if(!acc.find(d => d == e)) {
+        if(!acc.find(d => d === e)) {
           acc.push(e)
         }
       return(acc)
@@ -46,24 +47,23 @@ export const Navbar = () => {
                     <h1 className="navbar__logo--name m-0 pt-2">
                         <i className="fas fa-shopping-bag"></i>E-commerce</h1>
                 </Link>
-                <SearchBar/>
+                <SearchBar
+                    product={product}
+                />
                 <CartWidget/>
             </div>
-            <ul className = "navbarMenu col-8 row justify-content-around px-5">
-                    <li className="nav-links navCategories col-3">Categories
-                        <ul className="nav__category category-hide">{
-                            result.map((item, index) => (
-                                <li key ={index} className="nav__category--link">
-                                <Link to = {`/categoryid/${item}`}>{capitalize(item)}</Link>
-                                </li>
-                                ))                            
-                        }
-                        </ul>
-                    </li>       
-               <li className="nav-links col-md-3">New</li>
-               <li className="nav-links col-md-3">Best Seller</li>
-               <li className="nav-links col-md-3">Contac Us</li>
-            </ul>
+            <button className="btn-hamburger col-1" onClick={() => setMenu(!menu)}><i className="fas fa-bars"></i></button>
+            <div className="navbarMenu" id={menu? "hidden": ""}>
+                <ul className="listMenu col-12 row justify-content-around m-0 p-0">{
+                    result.map((item, index) => (
+                        <li key ={index} className="nav-links navCategories col-12 col-md-3 text-center">
+                        <Link className="nav-link" to = {`/categoryid/${item}`}>{capitalize(item)}</Link>
+                        </li>
+                        ))                            
+                    }
+                </ul>
+            </div>
+            
         </nav>
     );
 }

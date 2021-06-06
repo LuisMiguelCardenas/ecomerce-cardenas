@@ -1,4 +1,4 @@
-import React, { useState,useEffect, Fragment } from 'react'
+import React, { useState,useEffect } from 'react'
 import { useParams } from 'react-router';
 import {Link} from 'react-router-dom'
 import {getFirestore} from '../../../firebase/index'
@@ -47,7 +47,7 @@ export const CategoryId = () => {
                         <div key={item.id} className="item__container col-md-3">
                             <h4 className="item__container--title">{item.title}</h4>
                             <Link to = {`/item/${item.id}`}>
-                            <img className="item__container--img" src = {item.image} />
+                            <img className="item__container--img" src = {item.image} alt={item.title} />
                             </Link>
                             <p className="item__container--text">$ {item.price}</p>
                         </div>

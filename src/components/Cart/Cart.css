@@ -1,0 +1,30 @@
+.productInCart{
+    border: solid 1px #2525252f;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px -5px #252525;
+    padding: 1rem;
+    max-height: 10rem;
+}
+.productInCart__btn--remove{
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    color: #252525;
+}
+
+.productInCart__btn--remove:hover{
+    background-color: #25252511;
+}
+.productInCart__img{
+    height: 6rem;
+    width: auto;
+}
+.total{
+    font-size: 1.8rem;
+}
+.btn__clear{
+    background-color: #25252511;
+    border: soli 1px #252525;
+    border-radius: 5px;
+    color: #252525;
+}

@@ -1,7 +1,18 @@
+.searchItem {
+    background-color: #fff;
+    border: #ebebeb solid 5px;
+    color: #222020;
+    display: flex;
+    text-decoration: none;
+}
 .searchInput{
     border: none;
     border-radius: 5rem;
 }
 .fa-search{
     color: #222020;
+}
+
+.image__item{
+    max-width: 65px;
 }
