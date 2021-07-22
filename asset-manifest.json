@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/ecomerce-cardenas/static/css/main.6180f4e9.chunk.css",
+    "main.js": "/ecomerce-cardenas/static/js/main.ad0f8855.chunk.js",
+    "main.js.map": "/ecomerce-cardenas/static/js/main.ad0f8855.chunk.js.map",
+    "runtime-main.js": "/ecomerce-cardenas/static/js/runtime-main.f3a81161.js",
+    "runtime-main.js.map": "/ecomerce-cardenas/static/js/runtime-main.f3a81161.js.map",
+    "static/css/2.61b4cb56.chunk.css": "/ecomerce-cardenas/static/css/2.61b4cb56.chunk.css",
+    "static/js/2.b8bfef8d.chunk.js": "/ecomerce-cardenas/static/js/2.b8bfef8d.chunk.js",
+    "static/js/2.b8bfef8d.chunk.js.map": "/ecomerce-cardenas/static/js/2.b8bfef8d.chunk.js.map",
+    "static/js/3.ce5f5fa4.chunk.js": "/ecomerce-cardenas/static/js/3.ce5f5fa4.chunk.js",
+    "static/js/3.ce5f5fa4.chunk.js.map": "/ecomerce-cardenas/static/js/3.ce5f5fa4.chunk.js.map",
+    "index.html": "/ecomerce-cardenas/index.html",
+    "static/css/2.61b4cb56.chunk.css.map": "/ecomerce-cardenas/static/css/2.61b4cb56.chunk.css.map",
+    "static/css/main.6180f4e9.chunk.css.map": "/ecomerce-cardenas/static/css/main.6180f4e9.chunk.css.map",
+    "static/js/2.b8bfef8d.chunk.js.LICENSE.txt": "/ecomerce-cardenas/static/js/2.b8bfef8d.chunk.js.LICENSE.txt",
+    "static/media/banner.b099ec25.jpg": "/ecomerce-cardenas/static/media/banner.b099ec25.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f3a81161.js",
+    "static/css/2.61b4cb56.chunk.css",
+    "static/js/2.b8bfef8d.chunk.js",
+    "static/css/main.6180f4e9.chunk.css",
+    "static/js/main.ad0f8855.chunk.js"
+  ]
+}
